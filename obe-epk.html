@@ -9,12 +9,12 @@
 <style>
   @font-face {
     font-family: 'Akira';
-    src: url('/fonts/Akira_Super_Bold.otf') format('opentype');
+    src: url('fonts/Akira_Super_Bold.otf') format('opentype');
     font-weight: 900;
   }
   @font-face {
     font-family: 'ClashDisplay';
-    src: url('/fonts/ClashDisplay-Bold.otf') format('opentype');
+    src: url('fonts/ClashDisplay-Bold.otf') format('opentype');
     font-weight: 700;
   }
 
@@ -78,7 +78,7 @@
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: flex-end;
     position: relative; overflow: hidden;
-    background-image: url('/images/chelsea_hero.jpg');
+    background-image: url('images/chelsea_hero.jpg');
     background-size: cover;
     background-position: center 30%;
   }
@@ -122,10 +122,14 @@
   .hero-title {
     font-family: 'Akira', sans-serif;
     font-size: clamp(4.5rem, 11vw, 9.5rem);
-    line-height: 0.9; text-transform: uppercase; font-style: italic;
+    line-height: 1.0;
+    text-transform: uppercase;
+    font-style: italic;
     background: var(--grad);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     margin-bottom: 2.5rem;
+    padding: 0.05em 0.1em 0.05em 0;
+    overflow: visible;
   }
   .hero-row {
     display: flex; justify-content: space-between; align-items: flex-end;
@@ -184,8 +188,16 @@
   .s-title {
     font-family: 'Akira', sans-serif;
     font-size: clamp(2rem, 5vw, 3.8rem);
-    line-height: 0.95; text-transform: uppercase; font-style: italic;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-style: italic;
     margin-bottom: 3rem;
+    padding: 0.15em 0.1em 0.1em 0;
+    overflow: visible;
+  }
+  .s-title .grad-text {
+    display: inline-block;
+    padding: 0.1em 0.2em 0.1em 0.05em;
   }
 
   /* SYNOPSIS */
@@ -195,6 +207,16 @@
     padding-left: 1.5rem; margin-bottom: 3rem;
     font-size: 1.2rem; font-style: italic; font-weight: 300;
     color: rgba(245,242,240,0.85); line-height: 1.55;
+  }
+  .synopsis-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(245,242,240,0.75);
+    line-height: 1.78;
+    left-indent: 0.3*inch;
+  }
+  .synopsis-body p {
+    margin-bottom: 1.1em;
   }
   .two-col {
     display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
@@ -418,7 +440,17 @@
 
     /* Synopsis */
     .logline-pull { font-size: 1rem; }
-    .two-col { grid-template-columns: 1fr; gap: 1rem; }
+    .synopsis-body {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(245,242,240,0.75);
+    line-height: 1.78;
+    left-indent: 0.3*inch;
+  }
+  .synopsis-body p {
+    margin-bottom: 1.1em;
+  }
+  .two-col { grid-template-columns: 1fr; gap: 1rem; }
 
     /* Director */
     .dir-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -480,12 +512,14 @@
     <p class="logline-pull reveal">OUR BODY ELECTRIC follows three elite women bodybuilders competing to be Ms. Olympia, the most coveted muscle show title. Offering a behind-the-scenes look at women sculpting themselves into anatomical works of art, this feature-length film is both a testament to the power of athletics and an intimate portrait of women defying societal expectations.</p>
     <div class="two-col reveal">
       <div>
-        <p>Ariel, Amanda, and Chelsea each arrived at bodybuilding by a different road — and each carries a different weight. Ariel Khadr, the youngest IFBB Pro in history, must reconcile the relentless demands of elite competition with the pull of motherhood. Chelsea Dion, a three-time Olympian and multi-division champion, wages private battles with body image and financial instability that the trophy case doesn't show.</p>
-        <p>Amanda Kohatsu found the sport as a refuge from an abusive relationship — and now faces a new struggle: competing in a federation that continues to reduce and restrict opportunities for women in her division, even as she coaches her partner, 3x Olympian Keone Pearson, toward Olympia stages of his own.</p>
+        <p>Ariel, Amanda, and Chelsea each arrived at bodybuilding by a different road &mdash; and each carries a different weight.</p>
+        <p>Ariel, 33, the youngest IFBB Pro in history, has given her entire adult life to this sport &mdash; and she&rsquo;s not someone who walks away without winning. But the sacrifices are catching up with her, and the life she&rsquo;s put on hold is starting to feel more urgent than any title.</p>
+        <p>Amanda, 38, first picked up weights to protect herself from an abusive ex-partner &mdash; bodybuilding gave her the power she&rsquo;d been denied. But in a sport where men&rsquo;s prize money dwarfs women&rsquo;s by tenfold, she now wrestles with how much of that power to invest in herself versus the rising career of her boyfriend, Keone.</p>
       </div>
       <div>
-        <p>Shot over multiple seasons with a naturalistic, character-driven visual style, the film immerses audiences in the intimate rhythms of these women's lives — the pre-dawn training sessions, the precise meal prep, the vulnerability of the pre-competition taper, and the charged silence of standing alone under stage lights.</p>
-        <p>Together, their journeys reveal the contradictions of women striving for strength in a world that tells them to stay small. OUR BODY ELECTRIC is both a testament to the power of athletics and an intimate portrait of women defying societal expectations — one rep at a time.</p>
+        <p>Chelsea, 35, built her body as an act of defiance &mdash; a &ldquo;revenge physique&rdquo; forged in response to years of online harassment. To break into the top five and keep her career alive, she must bulk, committing to a year of radical physical transformation that will test her confidence, her brand, and her sense of self.</p>
+        <p>Their paths converge at the Ms. Olympia &mdash; the sport&rsquo;s most hallowed stage &mdash; where all three women must reckon with the sacrifices that brought them there, and ask themselves what comes next.</p>
+        <p>Shot over a single season with a naturalistic, character-driven visual style, the film immerses audiences in the intimate rhythms of these women&rsquo;s lives &mdash; the pre-dawn training sessions, the precise meal prep, the vulnerability of the pre-competition taper, and the charged silence of standing alone under stage lights.</p>
       </div>
     </div>
   </div>
@@ -533,7 +567,7 @@
     <div class="subj-grid">
       <div class="subj-card reveal">
         <div style="width:calc(100% + 4rem);margin-left:-2rem;aspect-ratio:16/9;overflow:hidden;margin-bottom:1.2rem;max-width:calc(100% + 4rem);">
-          <img src="/images/obe_still.jpg" alt="Chelsea Dion" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;">
+          <img src="images/obe_still.jpg" alt="Chelsea Dion" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;">
         </div>
         <div class="subj-name">Chelsea Dion</div>
         <div class="subj-cred">@chelseadion · 79.5K Followers</div>
@@ -541,7 +575,7 @@
       </div>
       <div class="subj-card reveal">
         <div class="subj-img" style="width:calc(100% + 4rem);margin-left:-2rem;aspect-ratio:16/9;overflow:hidden;margin-bottom:1.2rem;max-width:calc(100% + 4rem);">
-          <img src="/images/ariel_still.jpg" alt="Ariel Khadr" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
+          <img src="images/ariel_still.jpg" alt="Ariel Khadr" style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
         </div>
         <div class="subj-name">Ariel Khadr</div>
         <div class="subj-cred">@arielkhadr · 322K Followers</div>
@@ -549,7 +583,7 @@
       </div>
       <div class="subj-card reveal">
         <div class="subj-img" style="width:100%;aspect-ratio:16/9;overflow:hidden;margin-bottom:1.2rem;margin-left:-2rem;width:calc(100% + 4rem);">
-          <img src="/images/amanda_still.jpg" alt="Amanda Kohatsu" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+          <img src="images/amanda_still.jpg" alt="Amanda Kohatsu" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
         </div>
         <div class="subj-name">Amanda Kohatsu</div>
         <div class="subj-cred">@haparican · 106K Followers</div>
@@ -579,17 +613,6 @@
   </div>
 </section>
 
-<!-- PRESS -->
-<section id="press">
-  <div class="inner">
-    <h2 class="s-title reveal"><span class="grad-text">Press</span></h2>
-    <div class="press-empty reveal">
-      Press quotes and reviews will appear here.<br>
-      Contact us for screener access.
-    </div>
-  </div>
-</section>
-
 <!-- CONTACT -->
 <section id="contact">
   <div class="inner">
@@ -597,7 +620,7 @@
     <div class="contact-grid">
       <div>
         <div class="c-block reveal"><div class="c-label">Press Contact</div><div class="c-val">Dana Reilly</div></div>
-        <div class="c-block reveal"><div class="c-label">Email</div><div class="c-val"><a href="mailto:contact@ourbodyelectricfilm.com">contact@ourbodyelectricfilm.com</a></div></div>
+        <div class="c-block reveal"><div class="c-label">Email</div><div class="c-val"><a href="mailto:dreilly@mostlytruefilms.com">dreilly@mostlytruefilms.com</a></div></div>
       </div>
       <div>
         <div class="c-block reveal"><div class="c-label">Website</div><div class="c-val"><a href="https://ourbodyelectricfilm.com" target="_blank">ourbodyelectricfilm.com</a></div></div>
