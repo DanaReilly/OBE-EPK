@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Our Body Electric</title>
 <link rel="icon" type="image/png" href="bicep.png">
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
   @font-face {
@@ -68,7 +68,7 @@
   }
 
   .hero-eyebrow {
-    font-size: 0.6rem;
+    font-size: 0.75rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: #f050b0;
@@ -94,8 +94,8 @@
   }
 
   .hero-logline {
-    font-family: 'DM Mono', monospace;
-    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
     font-style: italic;
     font-weight: 300;
     color: rgba(245,242,240,0.7);
@@ -106,13 +106,138 @@
   }
 
   .hero-spec {
-    font-size: 0.55rem;
+    font-size: 0.85rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: rgba(240,80,176,0.7);
     animation: fadeUp 1s ease 0.8s both;
   }
 
+
+  /* ── SCREENINGS ── */
+  .screenings {
+    background: #080808;
+    animation: fadeUp 1s ease 0.9s both;
+  }
+  .screening-band {
+    background: #f050b0;
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .band-eyebrow {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(8,8,8,0.55);
+    margin-bottom: 0.4rem;
+  }
+  .band-date {
+    font-family: 'ClashDisplay', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: #080808;
+    line-height: 1.1;
+    margin-bottom: 0.35rem;
+  }
+  .band-venue {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: rgba(8,8,8,0.7);
+    letter-spacing: 0.04em;
+  }
+  .band-more {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(8,8,8,0.5);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .signup-row-wrap {
+    padding: 3rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    border: 1.5px solid #f050b0;
+    box-shadow: 0 0 32px rgba(240,80,176,0.18), inset 0 0 32px rgba(240,80,176,0.04);
+    margin: 2rem 4rem;
+  }
+  .signup-text-block strong {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #f5f2f0;
+    display: block;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+  .signup-text-block p {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    color: rgba(245,242,240,0.55);
+    line-height: 1.65;
+    max-width: 320px;
+  }
+  .signup-form {
+    display: flex;
+    gap: 0;
+  }
+  .signup-input {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(240,80,176,0.45);
+    border-right: none;
+    color: #f5f2f0;
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    padding: 0.85rem 1.1rem;
+    outline: none;
+    width: 240px;
+    transition: border-color 0.2s;
+  }
+  .signup-input::placeholder { color: rgba(245,242,240,0.3); }
+  .signup-input:focus { border-color: #f050b0; }
+  .signup-btn {
+    background: linear-gradient(135deg, #f860c0 0%, #d050d0 45%, #9040e8 100%);
+    border: none;
+    color: #fff;
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.5rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+    white-space: nowrap;
+  }
+  .signup-btn:hover { filter: brightness(1.1); }
+  .signup-confirm {
+    display: none;
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: 0.85rem;
+    color: #f050b0;
+  }
+  @media (max-width: 600px) {
+    .screening-band { padding: 1.5rem; }
+    .band-more { text-align: left; }
+    .signup-row-wrap { padding: 2rem 1.5rem; margin: 1.5rem; }
+    .signup-input { width: 100%; }
+    .signup-form { width: 100%; flex-direction: column; }
+    .signup-input { border-right: 1px solid rgba(240,80,176,0.45); border-bottom: none; }
+  }
   /* ── CONTACT ── */
   .contact {
     position: relative;
@@ -135,7 +260,7 @@
   }
 
   .c-label {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #f050b0;
@@ -170,7 +295,7 @@
     border: 1px solid rgba(240,80,176,0.5);
     color: #f050b0;
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.72rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     text-decoration: none;
@@ -196,7 +321,7 @@
   }
 
   footer span {
-    font-size: 0.5rem;
+    font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #333;
@@ -226,16 +351,38 @@
   <div class="hero-content">
     <div class="hero-eyebrow">A film by Dana Reilly</div>
     <h1 class="hero-title">Our<br>Body<br>Electric</h1>
-    <p class="hero-logline">Three elite women bodybuilders push their bodies to extremes, confronting the contradictions of a sport that both empowers and judges them.</p>
-    <p class="hero-spec">Feature Documentary &nbsp;&mdash;&nbsp; Seeking Distribution</p>
+    <p class="hero-logline">Three elite women bodybuilders—Ariel, Amanda, and Chelsea—compete to qualify for the Ms. Olympia, the most coveted muscle show title. Together, their journeys reveal what it costs to strive for strength in a world that tells women to stay small.</p>
+
   </div>
 </section>
 
+<!-- SCREENINGS + EMAIL SIGNUP -->
+<div class="screenings">
+  <div class="screening-band">
+    <div>
+      <div class="band-eyebrow">Upcoming screening</div>
+      <div class="band-date">Jun 20, 2026 &nbsp;&middot;&nbsp; 5&ndash;7PM</div>
+      <div class="band-venue">The Brendan Theatre &nbsp;&middot;&nbsp; The Palms, Las Vegas</div>
+    </div>
+    <div class="band-more">More dates<br>coming soon</div>
+  </div>
+  <div class="signup-row-wrap">
+    <div class="signup-text-block">
+      <strong>Get notified.</strong>
+      <p>Be the first to know when the film is available to watch.</p>
+    </div>
+    <form class="signup-form" onsubmit="handleSignup(event)">
+      <input type="email" class="signup-input" placeholder="your@email.com" required>
+      <button type="submit" class="signup-btn">Notify me</button>
+    </form>
+    <div class="signup-confirm" id="signup-confirm">You're on the list. ✦</div>
+  </div>
+</div>
 <div class="contact">
   <div class="contact-left">
     <div class="contact-item">
       <div class="c-label">Contact</div>
-      <div class="c-val"><a href="mailto:dreilly@mostlytruefilms.com">dreilly@mostlytruefilms.com</a></div>
+      <div class="c-val"><a href="mailto:contact@mostlytruefilms.com">contact@mostlytruefilms.com</a></div>
     </div>
     <div class="contact-item">
       <div class="c-label">Instagram</div>
@@ -253,5 +400,47 @@
   <span>Our Body Electric</span>
 </footer>
 
+<script>
+async function handleSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const input = form.querySelector(".signup-input");
+  const btn = form.querySelector(".signup-btn");
+  const confirm = document.getElementById("signup-confirm");
+  const email = input.value.trim();
+
+  btn.textContent = "...";
+  btn.disabled = true;
+
+  try {
+    const res = await fetch("https://connect.mailerlite.com/api/subscribers", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiOTBjYzczZGNmMWM2OGM2OGMwZDlkMTk4MTY1MDE4NzFhNTk2Mjk3ZTk1ZjkzZjU5M2ViOTI4MDgzMzVmM2JkZjBiMzAyYmVjZGQwNzI2YmMiLCJpYXQiOjE3Nzk4MjcyMzQuNjAzOTIzLCJuYmYiOjE3Nzk4MjcyMzQuNjAzOTI2LCJleHAiOjQ5MzU1MDA4MzQuNTk4MjMyLCJzdWIiOiIyMzc2OTMxIiwic2NvcGVzIjpbXX0.I9H95zAVfo6ZFXK2UlrOgB3HggSsqlwgsZ3t1ENyhmTB3v-0PW2FziTbjh2OLuAve30mMU7lOuH6Vt9YZC472L6KGLnXXJrP5qYgAeH1zBSiqw39OKll0TP8OIHNisnFdofn8I2AKjKRH8Amkn55XBNy6zndSXU_TjI6ORUviZ_RktLZ3zFr3ZERlV0cUztEE2dn607UDl9IPAipUzOmGhIz-0hmL4r3wDUqUoxbgzwxytyKUdLRGcO5mEUyy5Rxha-F42b4hbb6iQUWh7AzVN2hOAmIm4ciVvVJ96G1A2KrOJo-FqGKfeK5fibA80cFaNai9pOQKBgP7kRCChjDV9Z7_7Pb5okHtoKYqrSBXsOz_7licbEnhLmJZB1NdOpZB8g1UW3tLa6hBZNpjeFpocWt4SYJClDsBZaDtDUjMjUaI9KAXo-BN0tVIsLwfr4KQFx7SmNCxBVK7VusBL41-8s_oYTHCLn-cZsEGe_G3T0fqGy6URdVzPzX9q3JAm5mRj59nnSxgnYfagpjKVedi2Gr4P65xJ1Tpiy83r9M2MItclrXiJpch8vk5kcQ80R1M_SGBmqL6zHdLHM2ahe0hxFN918AP9cFf35oppRCWO2xglw_E7g6Zun-pmJN_h_8E0VE9QwH5UGpJA_3LXQfwP9XlnXTg9V9YDmBjrlB6Us"
+      },
+      body: JSON.stringify({
+        email: email,
+        groups: ["188093495547791263"]
+      })
+    });
+
+    if (res.ok || res.status === 201 || res.status === 200) {
+      form.style.display = "none";
+      confirm.style.display = "block";
+    } else {
+      const data = await res.json();
+      console.error("MailerLite error:", data);
+      btn.textContent = "Try again";
+      btn.disabled = false;
+    }
+  } catch (err) {
+    console.error("Network error:", err);
+    btn.textContent = "Try again";
+    btn.disabled = false;
+  }
+}
+</script>
 </body>
 </html>
