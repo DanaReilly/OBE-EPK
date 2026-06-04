@@ -39,7 +39,7 @@
     background: var(--black);
     color: var(--white);
     font-family: 'DM Sans', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.7;
     overflow-x: hidden;
   }
@@ -62,14 +62,14 @@
   }
   .nav-logo {
     font-family: 'ClashDisplay', sans-serif;
-    font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
     background: var(--grad);
     -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--gray); text-decoration: none; transition: color 0.25s;
   }
   .nav-links a:hover { color: var(--pink); }
@@ -117,22 +117,27 @@
   }
   .hero-eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 0.8rem; letter-spacing: 0.35em; text-transform: uppercase;
+    font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase;
     color: var(--pink); margin-bottom: 1.5rem;
   }
-  .hero-title-img {
-    display: block;
-    width: clamp(280px, 75vw, 900px);
-    height: auto;
+  .hero-title {
+    font-family: 'Akira', sans-serif;
+    font-size: clamp(4.5rem, 11vw, 9.5rem);
+    line-height: 1.0;
+    text-transform: uppercase;
+    font-style: italic;
+    background: var(--grad);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     margin-bottom: 2.5rem;
-    animation: fadeUp 1s ease 0.5s both;
+    padding: 0.05em 0.1em 0.05em 0;
+    overflow: visible;
   }
   .hero-row {
     display: flex; justify-content: space-between; align-items: flex-end;
     gap: 3rem; flex-wrap: wrap;
   }
   .hero-logline {
-    font-size: 1.2rem; font-weight: 300; font-style: italic;
+    font-size: 1.1rem; font-weight: 300; font-style: italic;
     color: rgba(245,242,240,0.6); max-width: 520px; line-height: 1.6;
   }
   .hero-specs {
@@ -141,7 +146,7 @@
   }
   .spec-pill {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase;
   }
   .spec-pill span { color: var(--pink); margin-right: 0.5rem; }
 
@@ -155,14 +160,14 @@
   }
   .strip-text {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--black); font-weight: bold;
   }
   .strip-btn {
     display: inline-block; padding: 0.5rem 1.5rem;
     background: var(--black); color: var(--white);
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
     text-decoration: none; transition: opacity 0.2s; white-space: nowrap;
   }
   .strip-btn:hover { opacity: 0.8; }
@@ -173,7 +178,7 @@
 
   .eyebrow {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.35em; text-transform: uppercase;
+    font-size: 0.58rem; letter-spacing: 0.35em; text-transform: uppercase;
     color: var(--pink); margin-bottom: 0.75rem;
     display: flex; align-items: center; gap: 1rem;
   }
@@ -233,11 +238,11 @@
   }
   .dir-role {
     font-family: 'DM Mono', monospace;
-    font-size: 0.75rem; letter-spacing: 0.25em; text-transform: uppercase;
+    font-size: 0.55rem; letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--gray); margin-bottom: 1.8rem;
   }
   .dir-bio {
-    font-size: 1.05rem; font-weight: 300;
+    font-size: 1rem; font-weight: 300;
     color: rgba(245,242,240,0.75); line-height: 1.76;
   }
   .dir-bio p { margin-bottom: 1.1em; }
@@ -245,11 +250,11 @@
   .film-entry { margin-bottom: 1.2rem; }
   .film-name {
     font-family: 'ClashDisplay', sans-serif;
-    font-size: 1.05rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white);
+    font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white);
   }
   .film-info {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.1em; color: var(--gray); margin-top: 0.2rem;
+    font-size: 0.55rem; letter-spacing: 0.1em; color: var(--gray); margin-top: 0.2rem;
   }
   .statement-box {
     background: var(--dark);
@@ -258,11 +263,11 @@
   }
   .stmt-label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.28em; text-transform: uppercase;
+    font-size: 0.52rem; letter-spacing: 0.28em; text-transform: uppercase;
     color: var(--pink); margin-bottom: 1.2rem;
   }
   .stmt-text {
-    font-size: 1rem; font-style: italic; font-weight: 300;
+    font-size: 0.92rem; font-style: italic; font-weight: 300;
     color: rgba(245,242,240,0.7); line-height: 1.82;
   }
   .stmt-text p { margin-bottom: 1em; }
@@ -290,16 +295,16 @@
   }
   .subj-name {
     font-family: 'ClashDisplay', sans-serif;
-    font-size: 1.25rem; letter-spacing: 0.06em; text-transform: uppercase;
+    font-size: 1.15rem; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--white); margin-bottom: 0.3rem;
   }
   .subj-cred {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.14em; color: var(--pink);
+    font-size: 0.55rem; letter-spacing: 0.14em; color: var(--pink);
     margin-bottom: 1.2rem; line-height: 1.6;
   }
   .subj-bio {
-    font-size: 1rem; font-weight: 300;
+    font-size: 0.9rem; font-weight: 300;
     color: rgba(245,242,240,0.65); line-height: 1.7;
   }
 
@@ -311,14 +316,14 @@
     display: flex; justify-content: space-between; align-items: baseline;
     padding: 1rem 0; border-bottom: 1px solid var(--mid); gap: 2rem;
   }
-  .sl { font-family: 'DM Mono', monospace; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); flex-shrink: 0; }
-  .sv { font-family: 'ClashDisplay', sans-serif; font-size: 1rem; letter-spacing: 0.05em; color: var(--white); text-align: right; }
+  .sl { font-family: 'DM Mono', monospace; font-size: 0.52rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gray); flex-shrink: 0; }
+  .sv { font-family: 'ClashDisplay', sans-serif; font-size: 0.88rem; letter-spacing: 0.05em; color: var(--white); text-align: right; }
   .laurels-area { margin-top: 2.5rem; }
   .laurel {
     display: inline-block; margin: 0.3rem 0.3rem 0 0;
     padding: 0.5rem 1.1rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.55rem; letter-spacing: 0.14em; text-transform: uppercase;
     border: 1px solid rgba(240,80,176,0.4); color: var(--pink);
     background: rgba(240,80,176,0.05);
   }
@@ -345,7 +350,7 @@
   }
   .rdesc {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase;
     color: var(--gray); line-height: 1.6;
   }
 
@@ -363,12 +368,12 @@
   .c-block { margin-bottom: 1.8rem; }
   .c-label {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.25em; text-transform: uppercase;
+    font-size: 0.52rem; letter-spacing: 0.25em; text-transform: uppercase;
     color: var(--pink); margin-bottom: 0.35rem;
   }
   .c-val {
     font-family: 'ClashDisplay', sans-serif;
-    font-size: 1.1rem; letter-spacing: 0.04em; color: var(--white);
+    font-size: 0.95rem; letter-spacing: 0.04em; color: var(--white);
   }
   .c-val a { color: var(--white); text-decoration: none; border-bottom: 1px solid rgba(245,242,240,0.15); transition: color 0.25s, border-color 0.25s; }
   .c-val a:hover { color: var(--pink); border-color: var(--pink); }
@@ -387,7 +392,7 @@
   }
   footer span {
     font-family: 'DM Mono', monospace;
-    font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray);
+    font-size: 0.5rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray);
   }
 
   /* ANIMATIONS */
@@ -401,7 +406,7 @@
   @media (max-width: 900px) {
     .subj-grid { grid-template-columns: 1fr 1fr; }
     .dir-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .hero-title-img { width: 70vw; }
+    .hero-title { font-size: clamp(3.5rem, 10vw, 6rem); }
     .contact-grid { grid-template-columns: 1fr 1fr; }
   }
 
@@ -414,7 +419,10 @@
     /* Hero */
     .hero { min-height: 90vh; }
     .hero-content { padding: 0 1.2rem 2rem; }
-    .hero-title-img { width: 85vw; }
+    .hero-title {
+      font-size: clamp(3rem, 16vw, 5rem);
+      line-height: 0.88;
+    }
     .hero-logline { font-size: 0.95rem; max-width: 100%; }
     .hero-row { flex-direction: column; gap: 1.2rem; align-items: flex-start; }
     .hero-specs { text-align: left; }
@@ -483,7 +491,7 @@
 
   <div class="hero-content">
     <div class="hero-eyebrow">Electronic Press Kit — 2026</div>
-    <img src="images/film_title_gradient.png" alt="Our Body Electric" class="hero-title-img">
+    <h1 class="hero-title">Our<br>Body<br>Electric</h1>
     <div class="hero-row">
       <p class="hero-logline">Three elite women bodybuilders push their bodies to extremes, confronting the contradictions of a sport that both empowers and judges them.</p>
       <div class="hero-specs">

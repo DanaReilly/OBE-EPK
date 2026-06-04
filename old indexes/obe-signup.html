@@ -44,10 +44,18 @@
 
   /* ── WORDMARK ── */
   .wordmark {
-    width: clamp(200px, 55vw, 340px);
-    height: auto;
+    font-family: 'Akira', sans-serif;
+    font-size: clamp(1.4rem, 5.5vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    font-style: italic;
+    background: linear-gradient(135deg, #f860c0 0%, #d050d0 45%, #9040e8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: clamp(1.5rem, 4vw, 2.2rem);
-    display: block;
+    display: inline-block;
     animation: fadeUp 0.7s ease 0.1s both;
   }
 
@@ -239,7 +247,7 @@
 
 <main class="page">
 
-  <img src="images/film_title_gradient.png" alt="Our Body Electric" class="wordmark">
+  <div class="wordmark">Our Body Electric</div>
 
   <!-- SIGNUP FORM -->
   <div class="signup-box" id="signup-box">

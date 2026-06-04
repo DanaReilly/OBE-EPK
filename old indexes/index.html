@@ -68,7 +68,7 @@
   }
 
   .hero-eyebrow {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-size: 0.75rem;
     letter-spacing: 0.35em;
     text-transform: uppercase;
     color: #f050b0;
@@ -76,28 +76,37 @@
     animation: fadeUp 1s ease 0.3s both;
   }
 
-  .hero-title-img {
-    display: block;
-    width: clamp(360px, 90vw, 1100px);
-    height: auto;
-    margin-bottom: 1.8rem;
+  .hero-title {
+    font-family: 'Akira', sans-serif;
+    font-size: clamp(4.5rem, 12vw, 10rem);
+    line-height: 0.88;
+    text-transform: uppercase;
+    font-style: italic;
+    background: linear-gradient(135deg, #f860c0 0%, #d050d0 45%, #9040e8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     animation: fadeUp 1s ease 0.5s both;
+    margin-bottom: 1.8rem;
+    padding: 0.05em 0.2em 0.05em 0;
+    overflow: visible;
+    display: inline-block;
   }
 
   .hero-logline {
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: clamp(1.1rem, 3vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
     font-style: italic;
     font-weight: 300;
     color: rgba(245,242,240,0.7);
-    line-height: 1.7;
+    line-height: 1.65;
     max-width: 560px;
     margin-bottom: 1.2rem;
     animation: fadeUp 1s ease 0.65s both;
   }
 
   .hero-spec {
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    font-size: 0.85rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: rgba(240,80,176,0.7);
@@ -121,7 +130,7 @@
   }
   .band-eyebrow {
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-size: 0.7rem;
     font-weight: 400;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -130,32 +139,22 @@
   }
   .band-date {
     font-family: 'ClashDisplay', sans-serif;
-    font-size: clamp(1.3rem, 5vw, 2rem);
+    font-size: clamp(1.4rem, 3vw, 2rem);
     font-weight: 700;
     color: #080808;
     line-height: 1.1;
     margin-bottom: 0.35rem;
   }
-  .band-venue-link {
-    color: inherit;
-    font: inherit;
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: rgba(8,8,8,0.4);
-  }
-  .band-venue-link:hover {
-    text-decoration-color: rgba(8,8,8,0.8);
-  }
   .band-venue {
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    font-size: 0.9rem;
     font-weight: 400;
     color: rgba(8,8,8,0.7);
     letter-spacing: 0.04em;
   }
   .band-more {
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-size: 0.8rem;
     font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -176,7 +175,7 @@
   }
   .signup-text-block strong {
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: 1.9rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: #f5f2f0;
     display: block;
@@ -185,7 +184,7 @@
   }
   .signup-text-block p {
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: 1rem;
+    font-size: 0.88rem;
     font-weight: 300;
     color: rgba(245,242,240,0.55);
     line-height: 1.65;
@@ -201,7 +200,7 @@
     border-right: none;
     color: #f5f2f0;
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 300;
     padding: 0.85rem 1.1rem;
     outline: none;
@@ -215,7 +214,7 @@
     border: none;
     color: #fff;
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -228,19 +227,16 @@
   .signup-confirm {
     display: none;
     font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: 1rem;
+    font-size: 0.85rem;
     color: #f050b0;
   }
   @media (max-width: 600px) {
     .screening-band { padding: 1.5rem; }
-    .band-more { text-align: left; white-space: normal; }
+    .band-more { text-align: left; }
     .signup-row-wrap { padding: 2rem 1.5rem; margin: 1.5rem; }
-    .signup-text-block strong { font-size: 1.35rem; }
-    .signup-text-block p { font-size: 0.95rem; max-width: 100%; }
-    .signup-input { width: 100%; font-size: 1rem; }
+    .signup-input { width: 100%; }
     .signup-form { width: 100%; flex-direction: column; }
     .signup-input { border-right: 1px solid rgba(240,80,176,0.45); border-bottom: none; }
-    .signup-btn { font-size: 0.9rem; padding: 1rem 1.5rem; }
   }
   /* ── CONTACT ── */
   .contact {
@@ -264,7 +260,7 @@
   }
 
   .c-label {
-    font-size: clamp(0.8rem, 2vw, 0.9rem);
+    font-size: 0.7rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: #f050b0;
@@ -273,7 +269,7 @@
 
   .c-val {
     font-family: 'ClashDisplay', sans-serif;
-    font-size: clamp(1.05rem, 3vw, 1.15rem);
+    font-size: 1rem;
     letter-spacing: 0.04em;
     color: #f5f2f0;
   }
@@ -325,7 +321,7 @@
   }
 
   footer span {
-    font-size: 0.8rem;
+    font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: #333;
@@ -340,11 +336,10 @@
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
     .hero-content { padding: 0 1.5rem 3rem; }
-    .hero-title-img { width: 90vw; }
+    .hero-title { font-size: clamp(3.5rem, 16vw, 5.5rem); }
     .contact { padding: 2rem 1.5rem 3rem; flex-direction: column; align-items: flex-start; }
-    .epk-link { align-self: flex-start; margin-top: 0.5rem; font-size: 0.8rem; }
-    footer { padding: 1rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 0.25rem; }
-    footer span { font-size: 0.65rem; }
+    .epk-link { align-self: flex-start; margin-top: 0.5rem; }
+    footer { padding: 1rem 1.5rem; }
   }
 </style>
 </head>
@@ -355,7 +350,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">A film by Dana Reilly</div>
-    <img src="images/film_title_gradient.png" alt="Our Body Electric" class="hero-title-img">
+    <h1 class="hero-title">Our<br>Body<br>Electric</h1>
     <p class="hero-logline">Three elite women bodybuilders—Ariel, Amanda, and Chelsea—compete to qualify for the Ms. Olympia, the most coveted muscle show title. Together, their journeys reveal what it costs to strive for strength in a world that tells women to stay small.</p>
 
   </div>
@@ -367,7 +362,7 @@
     <div>
       <div class="band-eyebrow">Upcoming screening</div>
       <div class="band-date">Jun 20, 2026 &nbsp;&middot;&nbsp; 3&ndash;5PM</div>
-      <div class="band-venue"><a href="https://www.brendentheatres.com/lasvegas/movie/our-body-electric/" target="_blank" class="band-venue-link">The Brenden Theatre &nbsp;&middot;&nbsp; The Palms, Las Vegas</a></div>
+      <div class="band-venue">The Brenden Theatre &nbsp;&middot;&nbsp; The Palms, Las Vegas</div>
     </div>
     <div class="band-more">More dates<br>coming soon</div>
   </div>
