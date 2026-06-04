@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Our Body Electric — Get Notified</title>
+<link rel="icon" type="image/png" href="bicep.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  @font-face {
+    font-family: 'Akira';
+    src: url('fonts/Akira_Super_Bold.otf') format('opentype');
+    font-weight: 900;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    height: 100%;
+    background: #080808;
+    color: #f5f2f0;
+    font-family: 'DM Mono', monospace;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: max(env(safe-area-inset-top), 40px) clamp(16px, 5vw, 32px) max(env(safe-area-inset-bottom), 40px);
+  }
+
+  .page {
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* ── WORDMARK ── */
+  .wordmark {
+    font-family: 'Akira', sans-serif;
+    font-size: clamp(1.4rem, 5.5vw, 2.1rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    font-style: italic;
+    background: linear-gradient(135deg, #f860c0 0%, #d050d0 45%, #9040e8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: clamp(1.5rem, 4vw, 2.2rem);
+    display: inline-block;
+    animation: fadeUp 0.7s ease 0.1s both;
+  }
+
+  /* ── SIGNUP BOX ── */
+  .signup-box {
+    width: 100%;
+    border: 1.5px solid #f050b0;
+    box-shadow: 0 0 32px rgba(240,80,176,0.15), inset 0 0 24px rgba(240,80,176,0.04);
+    padding: clamp(1.5rem, 5vw, 2rem) clamp(1.25rem, 4vw, 1.75rem);
+    animation: fadeUp 0.7s ease 0.25s both;
+  }
+
+  .signup-heading {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(1.15rem, 4vw, 1.4rem);
+    font-weight: 700;
+    color: #f5f2f0;
+    margin-bottom: clamp(0.4rem, 1.5vw, 0.6rem);
+    letter-spacing: -0.01em;
+  }
+
+  .signup-sub {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.88rem, 3vw, 1rem);
+    font-weight: 300;
+    color: rgba(245,242,240,0.85);
+    line-height: 1.6;
+    margin-bottom: clamp(1.1rem, 3.5vw, 1.5rem);
+  }
+
+  .signup-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(240,80,176,0.4);
+    border-bottom: none;
+    color: #f5f2f0;
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.95rem, 3.5vw, 1.05rem);
+    font-weight: 300;
+    padding: clamp(0.8rem, 2.5vw, 1rem) clamp(0.85rem, 3vw, 1.1rem);
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    display: block;
+    /* Prevent iOS zoom on focus (requires font-size >= 16px equivalent) */
+    font-size: max(16px, clamp(0.95rem, 3.5vw, 1.05rem));
+  }
+
+  .signup-input:last-of-type {
+    border-bottom: 1px solid rgba(240,80,176,0.4);
+  }
+
+  .signup-input::placeholder {
+    color: rgba(245,242,240,0.3);
+    font-size: max(16px, clamp(0.95rem, 3.5vw, 1.05rem));
+  }
+
+  .signup-input:focus {
+    border-color: #f050b0;
+    background: rgba(240,80,176,0.06);
+    outline: none;
+    position: relative;
+    z-index: 1;
+  }
+
+  .signup-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #f860c0 0%, #d050d0 45%, #9040e8 100%);
+    border: none;
+    color: #fff;
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.78rem, 2.8vw, 0.9rem);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: clamp(0.9rem, 3vw, 1.1rem);
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.1s;
+    margin-top: 10px;
+    border-radius: 0;
+    -webkit-appearance: none;
+    /* Accessible tap target */
+    min-height: 48px;
+  }
+
+  .signup-btn:hover { filter: brightness(1.1); }
+  .signup-btn:active { transform: scale(0.99); }
+
+  /* ── THANK YOU STATE ── */
+  .thankyou-box {
+    display: none;
+    width: 100%;
+    border: 1.5px solid #f050b0;
+    box-shadow: 0 0 32px rgba(240,80,176,0.15), inset 0 0 24px rgba(240,80,176,0.04);
+    padding: clamp(1.75rem, 6vw, 2.5rem) clamp(1.25rem, 4vw, 1.75rem);
+    animation: fadeUp 0.6s ease both;
+  }
+
+  .thankyou-mark {
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    color: #f050b0;
+    margin-bottom: clamp(0.75rem, 2.5vw, 1rem);
+    letter-spacing: 0.1em;
+  }
+
+  .thankyou-heading {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(1.15rem, 4vw, 1.4rem);
+    font-weight: 700;
+    color: #f5f2f0;
+    margin-bottom: clamp(0.4rem, 1.5vw, 0.6rem);
+    letter-spacing: -0.01em;
+  }
+
+  .thankyou-sub {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.88rem, 3vw, 1rem);
+    font-weight: 300;
+    color: rgba(245,242,240,0.85);
+    line-height: 1.65;
+    margin-bottom: clamp(1.4rem, 4vw, 1.9rem);
+  }
+
+  .thankyou-btn {
+    display: block;
+    width: 100%;
+    background: linear-gradient(135deg, #f860c0 0%, #d050d0 45%, #9040e8 100%);
+    color: #fff;
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.78rem, 2.8vw, 0.9rem);
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: clamp(0.9rem, 3vw, 1.1rem);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 0;
+    transition: filter 0.2s;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .thankyou-btn:hover { filter: brightness(1.1); }
+
+  /* ── BACK LINK ── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: clamp(1.25rem, 4vw, 1.75rem);
+    font-size: clamp(0.6rem, 2vw, 0.68rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,242,240,0.2);
+    text-decoration: none;
+    transition: color 0.2s;
+    animation: fadeUp 0.7s ease 0.4s both;
+    /* Accessible tap target */
+    min-height: 44px;
+    padding: 8px 0;
+  }
+
+  .back-link:hover { color: #f050b0; }
+
+  /* ── ANIMATION ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SMALL PHONES (< 360px) ── */
+  @media (max-width: 359px) {
+    .wordmark { font-size: 1.25rem; }
+    .signup-heading, .thankyou-heading { font-size: 1.05rem; }
+    .signup-sub, .thankyou-sub { font-size: 0.85rem; }
+  }
+
+  /* ── LARGER SCREENS ── */
+  @media (min-width: 600px) {
+    .signup-input, .signup-input::placeholder { font-size: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<main class="page">
+
+  <div class="wordmark">Our Body Electric</div>
+
+  <!-- SIGNUP FORM -->
+  <div class="signup-box" id="signup-box">
+    <div class="signup-heading">Get notified.</div>
+    <p class="signup-sub">Be the first to know when the film is available to watch online.</p>
+
+    <form onsubmit="handleSignup(event)" id="signup-form">
+      <input type="text" class="signup-input" id="name-input" placeholder="Your name" autocomplete="given-name">
+      <input type="email" class="signup-input" id="email-input" placeholder="your@email.com" autocomplete="email" inputmode="email" required>
+      <button type="submit" class="signup-btn" id="submit-btn">Notify me</button>
+    </form>
+  </div>
+
+  <!-- THANK YOU STATE -->
+  <div class="thankyou-box" id="thankyou-box">
+    <div class="thankyou-mark">✦</div>
+    <div class="thankyou-heading">You're on the list.</div>
+    <p class="thankyou-sub">Thank you — go back to our site to learn more about the film and upcoming screenings.</p>
+    <a class="thankyou-btn" href="https://ourbodyelectricfilm.com">Visit ourbodyelectricfilm.com</a>
+  </div>
+
+  <a class="back-link" href="https://ourbodyelectricfilm.com">← ourbodyelectricfilm.com</a>
+
+</main>
+
+<script>
+async function handleSignup(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const email = document.getElementById('email-input').value.trim();
+  const name = document.getElementById('name-input').value.trim();
+
+  btn.textContent = '...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('/.netlify/functions/subscribe', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ email, name })
+});
+
+    if (res.ok || res.status === 200 || res.status === 201) {
+      document.getElementById('signup-box').style.display = 'none';
+      const ty = document.getElementById('thankyou-box');
+      ty.style.display = 'block';
+    } else {
+      const data = await res.json();
+      console.error('MailerLite error:', data);
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    console.error('Network error:', err);
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  }
+}
+</script>
+
+</body>
+</html>
