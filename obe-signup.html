@@ -287,7 +287,7 @@ async function handleSignup(e) {
     const res = await fetch('/.netlify/functions/subscribe', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({ email, name })
+  body: JSON.stringify({ email: email, name: name })
 });
 
     if (res.ok || res.status === 200 || res.status === 201) {
