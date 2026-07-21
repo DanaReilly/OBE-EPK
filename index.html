@@ -110,14 +110,69 @@
     background: #080808;
     animation: fadeUp 1s ease 0.9s both;
   }
+  .screenings-section {
+    padding: 2.5rem 4rem 0.5rem;
+  }
+  .screenings-section.past {
+    padding-top: 1rem;
+  }
+  .section-heading {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #f050b0;
+    margin-bottom: 1.2rem;
+  }
+  .screenings-section.past .section-heading {
+    color: rgba(245,242,240,0.35);
+  }
   .screening-band {
     background: #f050b0;
-    padding: 2rem 4rem;
+    padding: 1.75rem 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     gap: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .screening-band:last-child {
+    margin-bottom: 0;
+  }
+  .screening-band.past-band {
+    background: transparent;
+    border: 1px solid rgba(245,242,240,0.12);
+  }
+  .screening-band.past-band .band-eyebrow,
+  .screening-band.past-band .band-venue {
+    color: rgba(245,242,240,0.4);
+  }
+  .screening-band.past-band .band-date {
+    color: rgba(245,242,240,0.65);
+  }
+  .screening-band.past-band .band-venue-link {
+    text-decoration-color: rgba(245,242,240,0.25);
+  }
+  .band-action {
+    font-family: 'Nunito Sans', Avenir, sans-serif;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(8,8,8,0.7);
+    text-align: right;
+    white-space: nowrap;
+  }
+  a.band-action {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(8,8,8,0.4);
+  }
+  a.band-action:hover {
+    color: #080808;
+    text-decoration-color: rgba(8,8,8,0.8);
   }
   .band-eyebrow {
     font-family: 'Nunito Sans', Avenir, sans-serif;
@@ -152,16 +207,6 @@
     font-weight: 400;
     color: rgba(8,8,8,0.7);
     letter-spacing: 0.04em;
-  }
-  .band-more {
-    font-family: 'Nunito Sans', Avenir, sans-serif;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(8,8,8,0.5);
-    text-align: right;
-    white-space: nowrap;
   }
   .signup-row-wrap {
     padding: 3rem 4rem;
@@ -232,8 +277,9 @@
     color: #f050b0;
   }
   @media (max-width: 600px) {
+    .screenings-section { padding: 2rem 1.5rem 0.5rem; }
     .screening-band { padding: 1.5rem; }
-    .band-more { text-align: left; white-space: normal; }
+    .band-action { text-align: left; white-space: normal; }
     .signup-row-wrap { padding: 2rem 1.5rem; margin: 1.5rem; }
     .signup-text-block strong { font-size: 1.35rem; }
     .signup-text-block p { font-size: 0.95rem; max-width: 100%; }
